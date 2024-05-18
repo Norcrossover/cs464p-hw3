@@ -3,31 +3,27 @@ import { useState, useEffect } from "react";
 
 export default function Countries() {
   const url = "https://cs464p564-frontend-api.vercel.app/api/countries";
-  const [countrieslist, setCountriesList] = useState([]);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => {
-        setLoading(true);
-        setCountriesList(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error.messge);
-      });
+    const fetchCountriesList = async () => {
+      axios
+        .get(url)
+        .then((response) => {
+          setLoading(true);
+          setData(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.error(error.messge);
+          setError(error);
+        });
+    };
+
+    fetchCountriesList();
   }, []);
 
-  return (
-    <div>
-      {loading && <div>Loading</div>}
-      {!loading && (
-        <div>
-          <h2>Data from the API</h2>
-        </div>
-      )}
-      <p>Countries: {countrieslist}</p>
-    </div>
-  );
+  return { data, loading, error };
 }

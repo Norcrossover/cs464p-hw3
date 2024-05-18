@@ -6,8 +6,8 @@ import Root from "./routes/root";
 import List from "./routes/list";
 import Population from "./routes/population";
 import Home from "./routes/home";
-import Info from "./routes/info";
 import Languages from "./routes/languages";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -16,23 +16,19 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "home/",
+    path: "home",
     element: <Home />,
   },
   {
-    path: "list/",
+    path: "list",
     element: <List />,
   },
   {
-    path: "population/",
+    path: "population",
     element: <Population />,
   },
   {
-    path: "info/",
-    element: <Info />,
-  },
-  {
-    path: "languages/",
+    path: "languages",
     element: <Languages />,
   },
 ]);

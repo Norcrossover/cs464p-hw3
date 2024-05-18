@@ -1,27 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 // export async function loader() {}
 
 export default function Root() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to={`/home`}>Home</Link>
-        </li>
-        <li>
-          <Link to={`/list`}>List</Link>
-        </li>
-        <li>
-          <Link to={`/population`}>Population</Link>
-        </li>
-        {/* <li>
-          <Link to={`/info`}>Info</Link>
-        </li> */}
-        <li>
-          <Link to={`/languages`}>Languages</Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className="flex">
+        <ul className="list-none justify-content-evenly">
+          <li>
+            <Link
+              to={`/home`}
+              className="no-underline text-slate-900 hover:text-slate-700"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/list`}
+              className="no-underline text-slate-900 hover:text-slate-700"
+            >
+              List
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/population`}
+              className="no-underline text-slate-900 hover:text-slate-700"
+            >
+              Population
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={`/languages`}
+              className="no-underline text-slate-900 hover:text-slate-700"
+            >
+              Languages
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <Outlet />
+    </>
   );
 }
