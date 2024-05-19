@@ -6,7 +6,7 @@ import numeral from "numeral";
 export default function List() {
   const { data } = FetchData();
   return (
-    <div className="bg-slate-500 min-h-screen">
+    <div className="bg-slate-700 min-h-screen">
       <Root />
       <div className="p-4 flex flex-wrap justify-evenly gap-4">
         {data.map((country) => (

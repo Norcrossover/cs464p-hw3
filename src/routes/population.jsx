@@ -1,13 +1,12 @@
 import Root from "./root";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import FetchData from "../components/fetchDataFromAPI";
 import "../index.css";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
-
 export default function Population() {
   const { data } = FetchData();
+  // const pink200 = "#FFC7D6";
+  const slate100 = "#F1F5F9";
 
   const countriesList = data.map(
     (country) => country.name || "Country name not available",
@@ -21,6 +20,7 @@ export default function Population() {
       {
         label: "Population",
         data: populationList,
+        backgroundColor: "rgba(6, 182, 212, 1)",
       },
     ],
   };
@@ -28,12 +28,45 @@ export default function Population() {
   const chartTitle = "Population of the countries in South America";
 
   return (
-    <div className="flex flex-col items-center bg-slate-100 min-h-screen">
+    <div className="flex flex-col items-center bg-slate-700 min-h-screen">
       <Root />
-      <h1 className="p-6 m-6 w-full text-4xl text-slate-900 text-start font-bold">
-        {chartTitle}
-      </h1>
-      <Bar data={chartData} />
+      <Bar
+        data={chartData}
+        key={Date.now()}
+        options={{
+          plugins: {
+            title: {
+              display: true,
+              text: chartTitle,
+              font: {
+                size: 30,
+                color: slate100,
+              },
+              color: slate100,
+            },
+            legend: {
+              labels: {
+                color: slate100,
+              },
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: slate100,
+              },
+            },
+            y: {
+              ticks: {
+                color: slate100,
+              },
+              grid: {
+                color: slate100,
+              },
+            },
+          },
+        }}
+      />
     </div>
   );
 }
