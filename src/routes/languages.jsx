@@ -4,7 +4,6 @@ import { Doughnut } from "react-chartjs-2";
 
 export default function Languages() {
   const { data } = FetchData();
-
   const slate100 = "#F1F5F9";
 
   let languageCounts = {};

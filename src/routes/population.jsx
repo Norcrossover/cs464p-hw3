@@ -1,12 +1,10 @@
 import Root from "./root";
 import { Bar } from "react-chartjs-2";
 import FetchData from "../components/fetchDataFromAPI";
-// import "../index.css";
 import Chart from "chart.js/auto";
 
 export default function Population() {
   const { data } = FetchData();
-  // const pink200 = "#FFC7D6";
   const slate100 = "#F1F5F9";
 
   const countriesList = data.map(
