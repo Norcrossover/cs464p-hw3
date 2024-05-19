@@ -12,11 +12,6 @@ import "./index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "home",
     element: <Home />,
   },
   {
@@ -32,6 +27,7 @@ const router = createBrowserRouter([
     element: <Languages />,
   },
 ]);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

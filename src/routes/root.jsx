@@ -6,7 +6,7 @@ export default function Root() {
     <>
       <nav className="w-full bg-slate-900 sticky top-0 z-20 shadow-lg">
         <ul className="list-none justify-evenly flex p-4">
-          <NavLink link="home" title="Home" />
+          <NavLink link="" title="Home" />
           <NavLink link="list" title="List" />
           <NavLink link="population" title="Population" />
           <NavLink link="languages" title="Languages" />
