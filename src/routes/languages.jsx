@@ -1,5 +1,5 @@
 import Root from "./root";
-import Countries from "../components/countries.jsx";
+import FetchData from "../components/fetchDataFromAPI.jsx";
 
 export default function Languages() {
   // const { data } = Countries();

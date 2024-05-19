@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export default function Countries() {
+export default function FetchData() {
   const url = "https://cs464p564-frontend-api.vercel.app/api/countries";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

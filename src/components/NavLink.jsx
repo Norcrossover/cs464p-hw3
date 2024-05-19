@@ -4,7 +4,7 @@ const NavLink = ({ link, title }) => (
   <li>
     <Link
       to={`/${link}`}
-      className="no-underline text-cyan-200 hover:text-cyan-400"
+      className="text-2xl no-underline text-slate-200 hover:text-cyan-400"
     >
       {title}
     </Link>

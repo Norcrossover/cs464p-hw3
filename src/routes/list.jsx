@@ -6,9 +6,8 @@ import numeral from "numeral";
 export default function List() {
   const { data } = FetchData();
   return (
-    <div className="bg-slate-500">
+    <div className="bg-slate-500 min-h-screen">
       <Root />
-      {/* <h1 className="p-10 text-2xl font-bold text-center">List of Countries</h1> */}
       <div className="p-4 flex flex-wrap justify-evenly gap-4">
         {data.map((country) => (
           <Card
@@ -23,15 +22,15 @@ export default function List() {
               <span className="font-semibold">Population:</span>{" "}
               <span>{numeral(country.population).format("0,0")}</span>
             </p>
-            <p className="break-words">
-              <span className="font-semibold">
+            <p>
+              <div className="font-semibold">
                 Gross Domestic Product (billions):
-              </span>{" "}
-              <span>
+              </div>{" "}
+              <div className="inline-block">
                 {country.gdp_billions
                   ? `$${numeral(country.gdp_billions).format("0,0")}`
                   : "GDP not available"}
-              </span>
+              </div>
             </p>
             <h2 className="mt-2">Languages Spoken:</h2>
             <ul className="list-disc ml-5">
