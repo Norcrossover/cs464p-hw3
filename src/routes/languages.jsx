@@ -1,5 +1,4 @@
 import Root from "./root";
-import FetchData from "../components/fetchDataFromAPI.jsx";
 
 export default function Languages() {
   // const { data } = Countries();
@@ -10,9 +9,8 @@ export default function Languages() {
   return (
     <>
       <Root />
-      <h1>
-        This should returrn a pie chart of the languages spoken across the
-        countries.
+      <h1 className="text-2xl font-bold">
+        Welcome to Homework 3 for Frontend Web Development!
       </h1>
     </>
   );
