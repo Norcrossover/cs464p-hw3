@@ -1,44 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
-
-// export async function loader() {}
+import { Outlet } from "react-router-dom";
+import NavLink from "../components/NavLink";
 
 export default function Root() {
   return (
     <>
-      <nav className="flex">
-        <ul className="list-none justify-content-evenly">
-          <li>
-            <Link
-              to={`/home`}
-              className="no-underline text-slate-900 hover:text-slate-700"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={`/list`}
-              className="no-underline text-slate-900 hover:text-slate-700"
-            >
-              List
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={`/population`}
-              className="no-underline text-slate-900 hover:text-slate-700"
-            >
-              Population
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={`/languages`}
-              className="no-underline text-slate-900 hover:text-slate-700"
-            >
-              Languages
-            </Link>
-          </li>
+      <nav className="w-full bg-slate-900 drop-shadow-lg rounded-b-full">
+        <ul className="list-none justify-evenly flex p-4">
+          <NavLink link="home" title="Home" />
+          <NavLink link="list" title="List" />
+          <NavLink link="population" title="Population" />
+          <NavLink link="languages" title="Languages" />
         </ul>
       </nav>
       <Outlet />

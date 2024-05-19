@@ -13,11 +13,7 @@ export default function Population() {
     (country) => country.name || "Country name not available",
   );
 
-  console.log("Countries List: " + countriesList);
-
   const populationList = data.map((country) => country.population || 0);
-
-  console.log("Population List: " + populationList);
 
   const chartData = {
     labels: countriesList,
@@ -29,11 +25,17 @@ export default function Population() {
     ],
   };
 
+  const chartTitle = "Population of the countries in South America";
+
   return (
-    <>
+    <div className="flex flex-col items-center bg-slate-50 min-h-screen">
       <Root />
-      <h1>Population of the different countries in South America.</h1>
-      <Bar data={chartData} />;
-    </>
+      <h1 className="p-6 m-6 w-1/4 text-2xl text-slate-900 text-center bg-slate-900 rounded-full text-cyan-200">
+        {chartTitle}
+      </h1>
+      <div className="p-6 m-6 w-full max-w-6xl">
+        <Bar data={chartData} options={{ maintainAspectRatio: false }} />
+      </div>
+    </div>
   );
 }
