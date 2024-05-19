@@ -33,9 +33,7 @@ export default function Population() {
       <h1 className="p-6 m-6 w-full text-4xl text-slate-900 text-start font-bold">
         {chartTitle}
       </h1>
-      <div className="p-6 m-6 w-full h-full min-w-xl min-h-xl max-w-6xl max-h-6xl">
-        <Bar data={chartData} options={{ maintainAspectRatio: false }} />
-      </div>
+      <Bar data={chartData} />
     </div>
   );
 }
