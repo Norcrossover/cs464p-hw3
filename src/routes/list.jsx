@@ -2,6 +2,7 @@ import Root from "./root";
 import Card from "../components/Card";
 import FetchData from "../components/fetchDataFromAPI";
 import numeral from "numeral";
+import Chart from "chart.js/auto";
 
 export default function List() {
   const { data } = FetchData();
@@ -18,11 +19,11 @@ export default function List() {
             <h2 className="font-bold text-xl mb-2">
               {country.name || "Country name not available"}
             </h2>
-            <p>
+            <div>
               <span className="font-semibold">Population:</span>{" "}
               <span>{numeral(country.population).format("0,0")}</span>
-            </p>
-            <p>
+            </div>
+            <div>
               <div className="font-semibold">
                 Gross Domestic Product (billions):
               </div>{" "}
@@ -31,7 +32,7 @@ export default function List() {
                   ? `$${numeral(country.gdp_billions).format("0,0")}`
                   : "GDP not available"}
               </div>
-            </p>
+            </div>
             <h2 className="mt-2">Languages Spoken:</h2>
             <ul className="list-disc ml-5">
               {Array.isArray(country.official_languages) ? (
