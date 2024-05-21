@@ -2,14 +2,13 @@ import Root from "./root";
 import Card from "../components/Card";
 import FetchData from "../components/fetchDataFromAPI";
 import numeral from "numeral";
-import Chart from "chart.js/auto";
 
 export default function List() {
   const { data } = FetchData();
   return (
     <div className="min-h-screen bg-slate-700">
       <Root />
-      <div className="grid grid-cols-4 gap-4 p-4 justify-evenly">
+      <div className="grid gap-5 m-3 md:grid-cols-2 lg:grid-cols-3 p-11">
         {data.map((country) => (
           <Card
             key={country.id}
@@ -24,14 +23,14 @@ export default function List() {
               <span>{numeral(country.population).format("0,0")}</span>
             </div>
             <div>
-              <div className="font-semibold">
+              <span className="font-semibold">
                 Gross Domestic Product (billions):
-              </div>
-              <div className="inline-block">
+              </span>
+              <span className="inline">
                 {country.gdp_billions
                   ? `$${numeral(country.gdp_billions).format("0,0")}`
                   : "GDP not available"}
-              </div>
+              </span>
             </div>
             <h2 className="mt-2">Languages Spoken:</h2>
             <ul className="ml-5 list-disc">
