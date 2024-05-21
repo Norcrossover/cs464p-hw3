@@ -7,16 +7,16 @@ import Chart from "chart.js/auto";
 export default function List() {
   const { data } = FetchData();
   return (
-    <div className="bg-slate-700 min-h-screen">
+    <div className="min-h-screen bg-slate-700">
       <Root />
-      <div className="p-4 flex flex-wrap justify-evenly gap-4">
+      <div className="grid grid-cols-4 gap-4 p-4 justify-evenly">
         {data.map((country) => (
           <Card
             key={country.id}
             imgSrc={country.flag_png}
             imgAlt={country.flag_alt}
           >
-            <h2 className="font-bold text-xl mb-2">
+            <h2 className="mb-2 text-xl font-bold">
               {country.name || "Country name not available"}
             </h2>
             <div>
@@ -26,7 +26,7 @@ export default function List() {
             <div>
               <div className="font-semibold">
                 Gross Domestic Product (billions):
-              </div>{" "}
+              </div>
               <div className="inline-block">
                 {country.gdp_billions
                   ? `$${numeral(country.gdp_billions).format("0,0")}`
@@ -34,7 +34,7 @@ export default function List() {
               </div>
             </div>
             <h2 className="mt-2">Languages Spoken:</h2>
-            <ul className="list-disc ml-5">
+            <ul className="ml-5 list-disc">
               {Array.isArray(country.official_languages) ? (
                 country.official_languages.map((language, index) => (
                   <li key={index}>{language}</li>
